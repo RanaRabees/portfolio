@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Congratulations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .contain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #189086, #2f8198);
+      background-image: linear-gradient(to bottom right, #02b3e4, #02ccba);
+    }
+
+    .done {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: -20px;
+      margin: auto;
+    }
+
+    .contain h1 {
+      font-family: 'Julius Sans One', sans-serif;
+      font-size: 1.4em;
+      color: #02b3e4;
+    }
+
+    .congrats {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      max-width: 800px;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      min-height: 300px;
+      max-height: 900px;
+      border: 2px solid white;
+      border-radius: 5px;
+      box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .3);
+      background-image: linear-gradient(to bottom right, #02b3e4, #02ccba);
+      background: #fff;
+      text-align: center;
+      font-size: 2em;
+      color: #189086;
+    }
+
+    .text {
+      position: relative;
+      font-weight: normal;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 80%;
+      max-width: 800px;
+
+      font-family: 'Lato', sans-serif;
+      font-size: 0.6em;
+
+    }
+
+
+    .circ {
+      opacity: 0;
+      stroke-dasharray: 130;
+      stroke-dashoffset: 130;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+    }
+
+    .tick {
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+      -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+      -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+      -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+      transition: stroke-dashoffset 1s 0.5s ease-out;
+    }
+
+    .drawn svg .path {
+      opacity: 1;
+      stroke-dashoffset: 0;
+    }
+
+    .regards {
+      font-size: .7em;
+    }
+
+
+    @media (max-width:600px) {
+      .congrats h1 {
+        font-size: 1.2em;
+      }
+
+      .done {
+        top: -10px;
+        width: 80px;
+        height: 80px;
+      }
+
+      .text {
+        font-size: 0.5em;
+      }
+
+      .regards {
+        font-size: 0.6em;
+      }
+    }
+
+    @media (max-width:500px) {
+      .congrats h1 {
+        font-size: 1em;
+      }
+
+      .done {
+        top: -10px;
+        width: 70px;
+        height: 70px;
+      }
+
+    }
+
+    @media (max-width:410px) {
+      .congrats h1 {
+        font-size: 1em;
+      }
+
+      .congrats .hide {
+        display: none;
+      }
+
+      .congrats {
+        width: 100%;
+      }
+
+      .done {
+        top: -10px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .regards {
+        font-size: 0.55em;
+      }
+
+    }
+
+    .congratulation-contents-icon {
+      margin-inline: auto;
+    }
+
+    .congratulation-contents-icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background-color: #65c18c;
+      color: #fff;
+      font-size: 50px;
+      border-radius: 50%;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      background: crimson;
+      color: #fff;
+      font-size: 25px;
+      padding: 12px 36px;
+      font-weight: 400;
+      border-radius: 6px;
+      border: 2px solid crimson;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: crimson;
+      background: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contain">
+    <div class="congrats">
+      <br>
+      <h1>Congrat<span class="hide">ulation</span>s !</h1>
+      <div class="congratulation-contents-icon">
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="text">
+        <h1>{{u}} <br>Here are your details<br>
+          <br>Name: {{username}}
+          <br>Email: {{useremail}}
+          <br>Message: {{usermessage}}
+        </h1>
+
+      </div>
+      <p class="regards">RanaVerse</p><br>
+      <div class="text">
+        <a style="display: inline-block;" href="/">Go Back</a>
+        <a style="display: inline-block;" href="/admin/rabees/userdata">Check It</a>
+      </div>
+    </div>
+  </div>
+  <!-- <center>
+    <h1>{{u}}</h1>
+  </center>
+  <br />
+  <center>
+    <h1>User Name: {{username}}</h1>
+  </center>
+  <center>
+    <h1>User Email: {{useremail}}</h1>
+  </center>
+  <center>
+    <h1>User Message: {{usermessage}}</h1>
+  </center> -->
+</body>
+
+</html>
